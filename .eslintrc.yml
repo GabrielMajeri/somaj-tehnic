@@ -2,8 +2,8 @@ env:
   browser: true
   es6: true
 extends:
-  - 'eslint:recommended'
-  - 'plugin:react/recommended'
+  - "eslint:recommended"
+  - "plugin:react/recommended"
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
@@ -16,6 +16,6 @@ settings:
   react:
     version: detect
 rules:
-  semi: ['error', 'always']
-  quotes: ['error', 'double']
-  react/display-name: ['off']
+  semi: ["error", "always"]
+  quotes: ["error", "double"]
+  react/display-name: ["off"]
