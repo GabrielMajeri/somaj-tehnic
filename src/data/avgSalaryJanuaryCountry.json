@@ -1,0 +1,254 @@
+{
+    "Alba": {
+        "agricultura": 2288.0,
+        "industrie": 2839.0,
+        "servicii": 3002.0,
+        "total": 2879.0
+    },
+    "Arad": {
+        "agricultura": 2372.0,
+        "industrie": 2819.0,
+        "servicii": 2739.0,
+        "total": 2771.0
+    },
+    "Arges": {
+        "agricultura": 2594.0,
+        "industrie": 3083.0,
+        "servicii": 2752.0,
+        "total": 2926.0
+    },
+    "Bacau": {
+        "agricultura": 2516.0,
+        "industrie": 2467.0,
+        "servicii": 3102.0,
+        "total": 2826.0
+    },
+    "Bihor": {
+        "agricultura": 2043.0,
+        "industrie": 2441.0,
+        "servicii": 2600.0,
+        "total": 2514.0
+    },
+    "Bistrita-Nasaudx": {
+        "agricultura": 2529.0,
+        "industrie": 2319.0,
+        "servicii": 2819.0,
+        "total": 2527.0
+    },
+    "Botosani": {
+        "agricultura": 2088.0,
+        "industrie": 2328.0,
+        "servicii": 2997.0,
+        "total": 2737.0
+    },
+    "Braila": {
+        "agricultura": 2298.0,
+        "industrie": 2420.0,
+        "servicii": 2888.0,
+        "total": 2669.0
+    },
+    "Brasov": {
+        "agricultura": 2434.0,
+        "industrie": 3000.0,
+        "servicii": 2849.0,
+        "total": 2905.0
+    },
+    "Bucuresti": {
+        "agricultura": 3769.0,
+        "industrie": 3547.0,
+        "servicii": 4244.0,
+        "total": 4104.0
+    },
+    "Buzau": {
+        "agricultura": 1877.0,
+        "industrie": 2454.0,
+        "servicii": 2766.0,
+        "total": 2552.0
+    },
+    "Calarasi": {
+        "agricultura": 2407.0,
+        "industrie": 2316.0,
+        "servicii": 2923.0,
+        "total": 2671.0
+    },
+    "Caras-Severin": {
+        "agricultura": 2716.0,
+        "industrie": 2241.0,
+        "servicii": 3314.0,
+        "total": 2830.0
+    },
+    "Cluj": {
+        "agricultura": 2740.0,
+        "industrie": 3059.0,
+        "servicii": 3876.0,
+        "total": 3616.0
+    },
+    "Constanta": {
+        "agricultura": 1954.0,
+        "industrie": 3044.0,
+        "servicii": 2938.0,
+        "total": 2945.0
+    },
+    "Covasna": {
+        "agricultura": 1855.0,
+        "industrie": 2244.0,
+        "servicii": 2625.0,
+        "total": 2473.0
+    },
+    "Dambovita": {
+        "agricultura": 2528.0,
+        "industrie": 2378.0,
+        "servicii": 2749.0,
+        "total": 2594.0
+    },
+    "Dolj": {
+        "agricultura": 2321.0,
+        "industrie": 2779.0,
+        "servicii": 3090.0,
+        "total": 2975.0
+    },
+    "Galati": {
+        "agricultura": 2021.0,
+        "industrie": 2802.0,
+        "servicii": 3063.0,
+        "total": 2954.0
+    },
+    "Giurgiu": {
+        "agricultura": 3651.0,
+        "industrie": 2655.0,
+        "servicii": 2822.0,
+        "total": 2802.0
+    },
+    "Gorj": {
+        "agricultura": 2034.0,
+        "industrie": 3052.0,
+        "servicii": 2717.0,
+        "total": 2830.0
+    },
+    "Harghita": {
+        "agricultura": 2021.0,
+        "industrie": 2363.0,
+        "servicii": 2698.0,
+        "total": 2541.0
+    },
+    "Hunedoara": {
+        "agricultura": 2025.0,
+        "industrie": 2470.0,
+        "servicii": 2632.0,
+        "total": 2550.0
+    },
+    "Ialomita": {
+        "agricultura": 2205.0,
+        "industrie": 2789.0,
+        "servicii": 2751.0,
+        "total": 2708.0
+    },
+    "Iasix": {
+        "agricultura": 2199.0,
+        "industrie": 2808.0,
+        "servicii": 3256.0,
+        "total": 3107.0
+    },
+    "Ilfov": {
+        "agricultura": 3516.0,
+        "industrie": 2966.0,
+        "servicii": 3453.0,
+        "total": 3297.0
+    },
+    "Maramures": {
+        "agricultura": 2043.0,
+        "industrie": 2346.0,
+        "servicii": 2750.0,
+        "total": 2531.0
+    },
+    "Mehedinti": {
+        "agricultura": 2292.0,
+        "industrie": 2611.0,
+        "servicii": 3025.0,
+        "total": 2865.0
+    },
+    "Mures": {
+        "agricultura": 2029.0,
+        "industrie": 2935.0,
+        "servicii": 3037.0,
+        "total": 2969.0
+    },
+    "Neamt": {
+        "agricultura": 2048.0,
+        "industrie": 2186.0,
+        "servicii": 2819.0,
+        "total": 2520.0
+    },
+    "Olt": {
+        "agricultura": 1997.0,
+        "industrie": 2945.0,
+        "servicii": 2912.0,
+        "total": 2895.0
+    },
+    "Prahova": {
+        "agricultura": 2631.0,
+        "industrie": 2894.0,
+        "servicii": 2977.0,
+        "total": 2935.0
+    },
+    "Salaj": {
+        "agricultura": 1876.0,
+        "industrie": 2633.0,
+        "servicii": 2595.0,
+        "total": 2588.0
+    },
+    "Satu Mare": {
+        "agricultura": 2650.0,
+        "industrie": 2486.0,
+        "servicii": 2763.0,
+        "total": 2626.0
+    },
+    "Sibiu": {
+        "agricultura": 2463.0,
+        "industrie": 3286.0,
+        "servicii": 3174.0,
+        "total": 3228.0
+    },
+    "Suceava": {
+        "agricultura": 2816.0,
+        "industrie": 2316.0,
+        "servicii": 2509.0,
+        "total": 2465.0
+    },
+    "Teleorman": {
+        "agricultura": 2227.0,
+        "industrie": 2118.0,
+        "servicii": 2808.0,
+        "total": 2544.0
+    },
+    "Timis": {
+        "agricultura": 3013.0,
+        "industrie": 3215.0,
+        "servicii": 3361.0,
+        "total": 3290.0
+    },
+    "Tulceax": {
+        "agricultura": 2131.0,
+        "industrie": 2803.0,
+        "servicii": 2817.0,
+        "total": 2772.0
+    },
+    "Valcea": {
+        "agricultura": 2405.0,
+        "industrie": 2537.0,
+        "servicii": 2750.0,
+        "total": 2649.0
+    },
+    "Vaslui": {
+        "agricultura": 2395.0,
+        "industrie": 2119.0,
+        "servicii": 2847.0,
+        "total": 2597.0
+    },
+    "Vrancea": {
+        "agricultura": 2606.0,
+        "industrie": 2092.0,
+        "servicii": 2713.0,
+        "total": 2473.0
+    }
+}
