@@ -54,7 +54,7 @@ export default function App() {
         <a
           href="http://fmi.unibuc.ro/hackthevirus/"
           target="_blank"
-          rel="noreferer noopener"
+          rel="noopener noreferrer"
         >
           #HackTheVirus
         </a>
