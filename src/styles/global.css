@@ -1,0 +1,39 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+}
+
+p,
+div,
+span {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  max-width: 460px;
+  margin: auto;
+}
+
+input[type="text"] {
+  max-width: 5em;
+  text-align: right;
+}
+
+footer {
+  background-color: #eee;
+  padding: 1em 2em;
+}

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
+import Reaptcha from "reaptcha";
 
 import "../styles/global.css";
 
 import salariesPerCounty from "../data/salariesPerCounty.json";
 import salariesPerJob from "../data/salariesPerJob.json";
+import consumeCart from "../data/consumeCart.json";
 
 export default function App() {
   return (
@@ -36,10 +38,13 @@ export default function App() {
 
         <SalaryForm />
 
-        <h2>Ce pot să fac dacă nu sunt plătit?</h2>
+        <h2>
+          Ce pot să fac <br />
+          dacă nu sunt plătit?
+        </h2>
         <p>
-          Te rugăm să ne contactezi prin <a href="#">acest formular</a>. Te vom
-          pune în legătură cu un{" "}
+          Te rugăm să ne transmiți mai multe detalii prin{" "}
+          <a href="#">acest formular</a>. Te vom pune în legătură cu un{" "}
           <a href="https://www.unelm.ro/">expert în legislația muncii</a>.
         </p>
       </main>
@@ -69,15 +74,33 @@ const SalaryForm = () => {
     setError,
   } = form;
 
-  const initialSalary = watch("initialSalary");
+  const [secret, setSecret] = useState("");
+
+  const onValidate = (recaptchaResponse) => setSecret(recaptchaResponse);
+
   const onSubmit = async (data) => {
+    const { initialSalary, county, job } = data;
     try {
-      // fetch
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          country: county.value,
+          department: job.value,
+          salary: initialSalary,
+          secret,
+        }),
+      };
+      fetch(
+        "https://us-central1-somaj-tehnic.cloudfunctions.net/somajapp/newentry",
+        requestOptions
+      );
     } catch (error) {
       setError("submit", "submitError", `Doh! ${error.message}`);
     }
   };
 
+  const initialSalary = watch("initialSalary");
   const showSalaryReport = !errors.initialSalary && initialSalary;
 
   const showSubmit = watch("county") && watch("job");
@@ -97,15 +120,15 @@ const SalaryForm = () => {
             name="initialSalary"
             placeholder="2000"
             ref={register({ pattern: /^[0-9]+$/i })}
-          />
-          <label htmlFor="initialSalary">RON</label>
+          />{" "}
+          <label htmlFor="initialSalary">lei</label>
           {errors.initialSalary && <div>Salariu invalid</div>}
         </div>
       </div>
       {showSalaryReport && (
         <SalaryReport initialSalary={initialSalary} form={form} />
       )}
-      {showSubmit && <Submit form={form} />}
+      {showSubmit && <Submit form={form} onValidate={onValidate} />}
     </form>
   );
 };
@@ -142,10 +165,26 @@ const SalaryReport = ({ initialSalary, form: { control, watch } }) => {
 
   return (
     <>
-      <div>Salariu brut inițial: {initialSalary} RON</div>
-      <div>Salariu brut actual: {newSalary} RON</div>
+      <div>Salariu brut inițial: {initialSalary} lei</div>
+      <div>Salariu brut actual: {newSalary} lei</div>
 
-      <p>Coșul minim de consum este</p>
+      <p>Coșul minim de consum este în valoare de</p>
+
+      <ul>
+        <li>
+          ... {consumeCart.doiAdultiDoiCopii} lei pentru o familie cu doi adulți
+          și doi copii
+        </li>
+        <li>
+          ... {consumeCart.doiAdultiUnCopil} lei pentru o familie cu doi adulți
+          și un copil
+        </li>
+        <li>
+          ... {consumeCart.doiAdultiZeroCopii} lei pentru o familie cu doi
+          adulți
+        </li>
+        <li>... {consumeCart.unAdultZeroCopii} lei pentru un adult</li>
+      </ul>
 
       <p>
         Dacă ne spui și din ce județ ești și în ce domeniu lucrezi, putem
@@ -158,7 +197,11 @@ const SalaryReport = ({ initialSalary, form: { control, watch } }) => {
         placeholder="Alegeți județul"
         options={countyOptions}
       />
-      {salaryPerCounty}
+      {salaryPerCounty && (
+        <>
+          Salariul mediu brut pe <b>județ</b>: {salaryPerCounty}
+        </>
+      )}
       <Controller
         as={Select}
         control={control}
@@ -166,7 +209,11 @@ const SalaryReport = ({ initialSalary, form: { control, watch } }) => {
         placeholder="Alegeți domeniul de activitate"
         options={jobOptions}
       />
-      {salaryPerJob}
+      {salaryPerJob && (
+        <>
+          Salariul mediu brut pe <b>domeniul</b> ales: {salaryPerJob}
+        </>
+      )}
     </>
   );
 };
@@ -175,15 +222,27 @@ const Submit = ({
   form: {
     formState: { isSubmitting },
   },
+  onValidate,
 }) => {
+  const [verified, setVerified] = useState(false);
+
+  const onVerify = (recaptchaResponse) => {
+    setVerified(true);
+    onValidate(recaptchaResponse);
+  };
+
   return (
     <>
       <p>
         Cu permisiunea ta, vrem să colectăm anonim aceste date pentru a ajuta
         autoritățile.
       </p>
+      <Reaptcha
+        sitekey="6LcqD-oUAAAAAA7kxZqUzzCtcXoZWx_T_spMwHsN"
+        onVerify={onVerify}
+      />
       <input
-        disabled={isSubmitting}
+        disabled={!verified || isSubmitting}
         type="submit"
         value="Trimite datele tale"
       />
