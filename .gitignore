@@ -1,2 +1,5 @@
 /node_modules/
 .DS_Store
+# Gatsby generated files
+/.cache/
+/public/
